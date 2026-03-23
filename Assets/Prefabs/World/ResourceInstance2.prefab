@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b66dabd52fb548b40a09c8fd01c58a4d, type: 2}
+  - {fileID: 2100000, guid: e8e554581e48a31478ef1e0eff339ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 5459432960463338299}
   - component: {fileID: 3183291522712636784}
   m_Layer: 0
-  m_Name: ResourceInstance1
+  m_Name: ResourceInstance2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc5e405f629a224f83cc217226fb4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Gameplay::ResourceWorldInstance
-  <ResourceSO>k__BackingField: {fileID: 11400000, guid: 6119bcb804e310b428a95ae782a1dcc9, type: 2}
+  <ResourceSO>k__BackingField: {fileID: 11400000, guid: 6b6b2004f7ae0b442ae79e9a38c96a16, type: 2}
 --- !u!54 &4127127238564835505
 Rigidbody:
   m_ObjectHideFlags: 0
