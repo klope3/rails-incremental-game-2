@@ -29,7 +29,10 @@ public class WorldObjectSpawner : MonoBehaviour
             GameObject go = poolToUse.GetPooledObject();
             go.SetActive(true);
             go.transform.position = new Vector3(Random.Range(-1 * xWidth, xWidth), yOrigin, zOrigin);
-            go.GetComponent<Rigidbody>().linearVelocity = Vector3.back * baseZVelocity;
+            go.transform.rotation = Quaternion.identity;
+            Rigidbody rb = go.GetComponent<Rigidbody>();
+            rb.linearVelocity = Vector3.back * baseZVelocity;
+            rb.angularVelocity = Vector3.zero;
         }
         timer = 0;
     }

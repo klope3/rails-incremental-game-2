@@ -189,9 +189,9 @@ MonoBehaviour:
   DrawerSettings:
   - DrawerID: 98e84aeb-e9f2-4299-b179-646dfcb47fea
     Created: 639097996749348393
-    Modified: 639098001455649720
+    Modified: 639099328115428916
     DrawerOptionSection: 0
-    StripeHeight: 2
+    StripeHeight: 0
     PalettePath: Default
     ReverseColorOrder: 0
     DimColors: 1
@@ -201,10 +201,10 @@ MonoBehaviour:
     ShowInfo: 1
     ShowPercentage: 1
     ShowWeights: 0
-    StripeHeightPixels: 50
+    StripeHeightPixels: 26
     StripePercentageDigits: 0
     VisualizeDepletableItems: 0
-    HideListEntries: 0
+    HideListEntries: 1
     ItemPercentageDigits: 2
     TestPercentageDigits: 2
     ColorizePreviewBars: 1
