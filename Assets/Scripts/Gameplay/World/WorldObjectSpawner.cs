@@ -30,8 +30,6 @@ public class WorldObjectSpawner : MonoBehaviour
 
     private void Update()
     {
-        MoveObjects();
-
         timer += Time.deltaTime;
         if (timer > 1 / velocityZ) //e.g. if the velocity is 4, then objects cover 1 unit in 0.25 seconds, so counters will be updated 4 times per second
         {
@@ -41,13 +39,18 @@ public class WorldObjectSpawner : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        MoveObjects();
+    }
+
     private void MoveObjects()
     {
         foreach (Rigidbody rb in spawnedRigidbodies)
         {
             if (rb.gameObject.activeInHierarchy)
             {
-                rb.transform.position += Vector3.back * velocityZ * Time.deltaTime;
+                rb.MovePosition(rb.transform.position + Vector3.back * velocityZ * Time.fixedDeltaTime);
             }
         }
     }

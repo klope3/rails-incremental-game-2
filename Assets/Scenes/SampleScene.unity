@@ -791,7 +791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &553895766
 Transform:
   m_ObjectHideFlags: 0
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   asteroidPool: {fileID: 1363787088}
   resource1Pool: {fileID: 1298502436}
   resource2Pool: {fileID: 2112970462}
-  CellsWidth: 23
+  CellsWidth: 48
   yOrigin: 1
   zOrigin: 16
   spawnInterval: 0.5
