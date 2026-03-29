@@ -341,6 +341,7 @@ Transform:
   - {fileID: 1298502435}
   - {fileID: 2112970461}
   - {fileID: 52145454}
+  - {fileID: 1363787087}
   m_Father: {fileID: 1956730829}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
@@ -790,7 +791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &553895766
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,6 +1495,53 @@ MonoBehaviour:
   prefabToPool: {fileID: 4798730625007508863, guid: a759de5805f41704ca8dd784d96bcb57, type: 3}
   startingCount: 5
   instantiateOnAwake: 1
+--- !u!1 &1363787086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363787087}
+  - component: {fileID: 1363787088}
+  m_Layer: 0
+  m_Name: AsteroidBigPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1363787087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363787086}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 309593198}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363787088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363787086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77638ad64140ae14eadb8c98ae400caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Gameplay::GameObjectPool
+  prefabToPool: {fileID: 5963551799017811179, guid: b34969a5182ac4f4da1408c501d35814, type: 3}
+  startingCount: 5
+  instantiateOnAwake: 1
 --- !u!1 &1435270059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1688,52 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.82
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1839086841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839086842}
+  - component: {fileID: 1839086843}
+  m_Layer: 0
+  m_Name: Debug
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1839086842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839086841}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839086843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839086841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a4918de40de1e499a10615b57494ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::WorldSpawnerCellDebug
+  debugPf: {fileID: 5363747027044125439, guid: fa49c0079f4455f47b7a46ed3dd1e605, type: 3}
+  spawner: {fileID: 2012737653}
 --- !u!1 &1956730828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,13 +1814,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599b1081ea72f8847b38d486ab8bd033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Gameplay::WorldObjectSpawner
-  asteroidPool: {fileID: 52145455}
+  asteroidPool: {fileID: 1363787088}
   resource1Pool: {fileID: 1298502436}
   resource2Pool: {fileID: 2112970462}
-  xWidth: 23
+  CellsWidth: 23
   yOrigin: 1
   zOrigin: 16
-  baseZVelocity: 2
   spawnInterval: 0.5
   die:
     m_PLID: 98e84aeb-e9f2-4299-b179-646dfcb47fea
@@ -1816,6 +1909,7 @@ MonoBehaviour:
     m_DepletableList: 0
     m_WeightsPriority: 0
     m_BaseWeight: 100
+  velocityZ: 2
 --- !u!1 &2112970460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,3 +2119,4 @@ SceneRoots:
   - {fileID: 1956730829}
   - {fileID: 978037565}
   - {fileID: 1435270062}
+  - {fileID: 1839086842}
