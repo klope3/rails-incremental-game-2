@@ -55,6 +55,13 @@ public class WorldObjectSpawner : MonoBehaviour
         }
     }
 
+    public void DeactivateAllObjects()
+    {
+        asteroidPool.DeactivateAll();
+        resource1Pool.DeactivateAll();
+        resource2Pool.DeactivateAll();
+    }
+
     private void UpdateCounters()
     {
         for (int i = 0; i < cellOccupancyCounters.Length; i++)

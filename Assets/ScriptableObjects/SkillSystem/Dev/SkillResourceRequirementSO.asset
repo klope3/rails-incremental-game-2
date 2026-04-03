@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8b10cfcb37736458262da1c03b6df1, type: 3}
+  m_Name: SkillResourceRequirementSO
+  m_EditorClassIdentifier: Gameplay::SkillResourceRequirementSO
+  resource1Requirement: 3
+  resource2Requirement: 2
+  resource3Requirement: 0
+  resource1SO: {fileID: 11400000, guid: 6119bcb804e310b428a95ae782a1dcc9, type: 2}
+  resource2SO: {fileID: 11400000, guid: 6b6b2004f7ae0b442ae79e9a38c96a16, type: 2}
+  resource3SO: {fileID: 11400000, guid: 5c23cf40a4ab26144a48a09875bf6cd6, type: 2}

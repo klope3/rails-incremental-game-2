@@ -49,6 +49,14 @@ public class GameObjectPool : MonoBehaviour
         return go;
     }
 
+    public void DeactivateAll()
+    {
+        foreach (Transform t in transform)
+        {
+            t.gameObject.SetActive(false);
+        }
+    }
+
     //this can be overridden by inheriting classes that need to initialize objects with references
     //or do other logic before/after instantiation
     protected virtual GameObject InstantiateObject(GameObject prefab)

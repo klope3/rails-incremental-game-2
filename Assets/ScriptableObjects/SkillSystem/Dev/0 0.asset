@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3bcaa6aec14e34999b74b4ea417f82, type: 3}
+  m_Name: 0 0
+  m_EditorClassIdentifier: Gameplay::SkillTreeNodeSO
+  <SkillName>k__BackingField: 0 0
+  <Sprite>k__BackingField: {fileID: 0}
+  <GridPosition>k__BackingField: {x: 0, y: 0}
+  <Children>k__BackingField:
+  - {fileID: 11400000, guid: 1c8ce9893f55b3243a20cc2e29942968, type: 2}
+  - {fileID: 11400000, guid: fafa706a3328c2441a7b6e58a84d3216, type: 2}
+  effects: []
+  requirements:
+  - {fileID: 11400000, guid: 950d6066e8bb8f548b77242e023eb45e, type: 2}

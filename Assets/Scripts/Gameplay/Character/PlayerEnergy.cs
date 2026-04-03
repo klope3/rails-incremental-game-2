@@ -5,24 +5,25 @@ public class PlayerEnergy : MonoBehaviour
 {
     [SerializeField] private float baseAmount;
     [SerializeField] private float baseDepletionRate;
+    [SerializeField] private PlayerSkills playerSkills;
     public float CurrentAmount { get; private set; }
     public float MaxAmount
     {
         get
         {
-            return baseAmount; //this may eventually be modified via upgrades
+            return baseAmount + playerSkills.AppliedSkillEffects.EnergyAdd;
         }
     }
-    public UnityEvent OnDepleted;
-
-    private void Awake()
-    {
-        CurrentAmount = baseAmount;
-    }
+    public event System.Action OnDepleted;
 
     private void Update()
     {
-        Add(-1 * baseDepletionRate * Time.deltaTime);
+        Add(-1 * (baseDepletionRate + playerSkills.AppliedSkillEffects.EnergyDepletionRateAdd) * Time.deltaTime);
+    }
+
+    public void PrepareForLevel()
+    {
+        CurrentAmount = MaxAmount;
     }
 
     public void Add(float amount)
