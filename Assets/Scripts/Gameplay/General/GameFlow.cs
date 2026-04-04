@@ -6,7 +6,7 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [SerializeField] private PlayerEnergy playerEnergy;
     [SerializeField] private ShipControl shipControl;
-    [SerializeField] private WorldObjectSpawner spawner;
+    [SerializeField] private WorldObjectSpawnerNew spawner;
     public UnityEvent OnPlayModeActive;
     public UnityEvent OnUpgradeModeActive;
 

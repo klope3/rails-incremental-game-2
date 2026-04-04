@@ -4,7 +4,7 @@ public class Ship : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        WorldObjectSpawnable obj = collision.collider.GetComponent<WorldObjectSpawnable>();
+        WorldObjectSpawnableNew obj = collision.collider.GetComponent<WorldObjectSpawnableNew>();
         if (obj == null)
         {
             return;

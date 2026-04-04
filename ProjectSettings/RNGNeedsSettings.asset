@@ -189,7 +189,7 @@ MonoBehaviour:
   DrawerSettings:
   - DrawerID: 98e84aeb-e9f2-4299-b179-646dfcb47fea
     Created: 639097996749348393
-    Modified: 639104968178545219
+    Modified: 639108155266877438
     DrawerOptionSection: 0
     StripeHeight: 0
     PalettePath: Default
@@ -205,6 +205,38 @@ MonoBehaviour:
     StripePercentageDigits: 0
     VisualizeDepletableItems: 0
     HideListEntries: 1
+    ItemPercentageDigits: 2
+    TestPercentageDigits: 2
+    ColorizePreviewBars: 1
+    NormalizePreviewBars: 0
+    TestColorizeSensitivity: 3
+    SpreadColorizeSensitivity: 2
+    ElementInfoSpace: 0.5
+    ShowInfluenceToggle: 0
+    ShowSpreadOnBars: 0
+    SpreadPercentageDigits: 1
+    DepletableListAction: 0
+    SetUnitsValue: 1
+    SetMaxUnitsValue: 1
+    SetDepletableValue: 1
+  - DrawerID: 2b0082f5-e6fe-4db6-8d93-09ff8bee52f8
+    Created: 639108155422601664
+    Modified: 639108156653552394
+    DrawerOptionSection: 0
+    StripeHeight: 2
+    PalettePath: Default
+    ReverseColorOrder: 0
+    DimColors: 1
+    Monochrome: 0
+    MonochromeColor: {r: 1, g: 0.78, b: 0.4, a: 1}
+    ShowIndex: 0
+    ShowInfo: 1
+    ShowPercentage: 1
+    ShowWeights: 0
+    StripeHeightPixels: 50
+    StripePercentageDigits: 0
+    VisualizeDepletableItems: 0
+    HideListEntries: 0
     ItemPercentageDigits: 2
     TestPercentageDigits: 2
     ColorizePreviewBars: 1
