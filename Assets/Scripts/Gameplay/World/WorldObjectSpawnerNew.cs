@@ -8,6 +8,7 @@ public class WorldObjectSpawnerNew : MonoBehaviour
     [SerializeField] private float outerBoundsOffset;
     [SerializeField] private float spawnAttemptInterval;
     [SerializeField] private float launchForce;
+    [SerializeField] private float randSpin;
     [SerializeField] private GameObjectPool asteroidPool;
     [SerializeField] private GameObjectPool resource1Pool;
     [SerializeField] private GameObjectPool resource2Pool;
@@ -46,7 +47,11 @@ public class WorldObjectSpawnerNew : MonoBehaviour
             go.transform.position = randPos;
             Rigidbody rb = go.GetComponent<Rigidbody>();
             rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+
+            float randSpinX = Random.Range(-1 * randSpin, randSpin);
+            float randSpinY = Random.Range(-1 * randSpin, randSpin);
+            float randSpinZ = Random.Range(-1 * randSpin, randSpin);
+            rb.angularVelocity = new Vector3(randSpinX, randSpinY, randSpinZ);
             rb.AddForce(randVec * launchForce, ForceMode.Impulse);
         }
 

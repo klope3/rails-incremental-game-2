@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public class ResourceCollector : MonoBehaviour
 {
     [SerializeField] private ResourceHandler resourceHandler;
+    public UnityEvent OnCollect;
 
     private void Awake()
     {
@@ -20,5 +22,6 @@ public class ResourceCollector : MonoBehaviour
 
         resourceHandler.AddResource(resourceInstance.ResourceSO, 1);
         resourceInstance.GetCollected();
+        OnCollect?.Invoke();
     }
 }
