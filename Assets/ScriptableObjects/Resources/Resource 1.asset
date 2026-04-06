@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Resource 1
   m_EditorClassIdentifier: Gameplay::ResourceSO
   <Name>k__BackingField: R1
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 84f10cdfc8f16a141b55b3848c7cf032, type: 3}
+  <Color>k__BackingField: {r: 1, g: 0.7372549, b: 0, a: 1}

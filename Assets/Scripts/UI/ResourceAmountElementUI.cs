@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class ResourceAmountElementUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI amountText;
+    [SerializeField] private Image image;
     private ResourceHandler resourceHandler;
     private ResourceSO resourceSO;
 
@@ -16,7 +18,9 @@ public class ResourceAmountElementUI : MonoBehaviour
 
     public void UpdateDisplay()
     {
+        image.sprite = resourceSO.Sprite;
+        image.color = resourceSO.Color;
         int amount = resourceHandler.GetResourceAmount(resourceSO);
-        amountText.text = $"{amount} {resourceSO.Name}";
+        amountText.text = $"{amount}";
     }
 }
