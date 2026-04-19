@@ -7,10 +7,6 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private Camera cam;
     public Vector3 CursorWorldPosition { get; private set; }
 
-    public void Initialize()
-    {
-    }
-
     private void Update()
     {
         Ray ray = cam.ScreenPointToRay(InputActionsProvider.GetMousePosition());

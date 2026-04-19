@@ -6,6 +6,7 @@ public class PlayerEnergy : MonoBehaviour
     [SerializeField] private float baseAmount;
     [SerializeField] private float baseDepletionRate;
     [SerializeField] private PlayerSkills playerSkills;
+    public bool EnergyCanDrain { get; set; }
     public float CurrentAmount { get; private set; }
     public float MaxAmount
     {
@@ -28,6 +29,11 @@ public class PlayerEnergy : MonoBehaviour
 
     public void Add(float amount)
     {
+        if (amount < 0 && !EnergyCanDrain)
+        {
+            return;
+        }
+
         CurrentAmount = Mathf.Clamp(CurrentAmount + amount, 0, MaxAmount);
         if (Mathf.Approximately(CurrentAmount, 0))
         {

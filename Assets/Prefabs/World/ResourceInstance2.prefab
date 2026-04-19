@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7036249431404009656}
   - component: {fileID: 2621833897288065784}
   - component: {fileID: 1492951480323520961}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4127127238564835505}
   - component: {fileID: 5459432960463338299}
   - component: {fileID: 3183291522712636784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ResourceInstance2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,6 +335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: geoCube
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b7422eeeec7e794ebe98dce4a337c6b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -415,9 +419,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1174166228261679691, guid: 161317605bf9fda4888e1851bb33af75, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3937746114055035417, guid: 161317605bf9fda4888e1851bb33af75, type: 3}
       propertyPath: m_Name
       value: ItemGrab2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937746114055035417, guid: 161317605bf9fda4888e1851bb33af75, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

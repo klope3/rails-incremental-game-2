@@ -7,6 +7,11 @@ public class Ship : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
+
         WorldObjectSpawnableNew obj = collision.collider.GetComponent<WorldObjectSpawnableNew>();
         if (obj == null)
         {

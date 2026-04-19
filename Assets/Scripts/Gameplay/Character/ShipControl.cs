@@ -7,6 +7,7 @@ public class ShipControl : MonoBehaviour
     [SerializeField] private float baseMoveSpeed;
     [SerializeField] private float stopThreshold;
     [SerializeField] private PlayerSkills playerSkills;
+    public Vector3 MoveVec { get; private set; }
 
     public void PrepareForLevel()
     {
@@ -17,7 +18,7 @@ public class ShipControl : MonoBehaviour
     private void Update()
     {
         Vector3 vecToCursor = playerInput.CursorWorldPosition - character.transform.position;
-        Vector3 moveVec = vecToCursor.magnitude > stopThreshold ? vecToCursor.normalized : Vector3.zero;
-        character.SetMovementDirection(moveVec);
+        MoveVec = vecToCursor.magnitude > stopThreshold ? vecToCursor.normalized : Vector3.zero;
+        character.SetMovementDirection(MoveVec);
     }
 }
