@@ -221,7 +221,7 @@ MonoBehaviour:
     SetDepletableValue: 1
   - DrawerID: 2b0082f5-e6fe-4db6-8d93-09ff8bee52f8
     Created: 639108155422601664
-    Modified: 639121363308539586
+    Modified: 639122218763773870
     DrawerOptionSection: 0
     StripeHeight: 2
     PalettePath: Default

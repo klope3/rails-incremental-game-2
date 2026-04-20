@@ -48,7 +48,6 @@ public class WorldObjectSpawnableNew : MonoBehaviour, IProjectileImpactable
 
     private void DoDestroy()
     {
-        Debug.Log("Destroy");
         if (!gameObject.activeInHierarchy)
         {
             return;

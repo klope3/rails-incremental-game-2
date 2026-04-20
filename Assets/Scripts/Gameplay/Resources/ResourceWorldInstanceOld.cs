@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ResourceWorldInstance : MonoBehaviour
+public class ResourceWorldInstanceOld : MonoBehaviour
 {
     [field: SerializeField] public ResourceSO ResourceSO { get; private set; }
     [SerializeField] private float deactivateDelay;

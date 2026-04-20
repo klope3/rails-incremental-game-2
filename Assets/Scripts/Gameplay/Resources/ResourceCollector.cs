@@ -14,7 +14,7 @@ public class ResourceCollector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ResourceWorldInstance resourceInstance = other.GetComponent<ResourceWorldInstance>();
+        ResourceWorldInstanceOld resourceInstance = other.GetComponent<ResourceWorldInstanceOld>();
         if (resourceInstance == null)
         {
             return;
