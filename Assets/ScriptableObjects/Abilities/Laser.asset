@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Laser
   m_EditorClassIdentifier: Gameplay::LaserAbility
   <Name>k__BackingField: Laser
-  <BaseMaxUses>k__BackingField: 1
+  <BaseMaxUses>k__BackingField: 5
+  <Sprite>k__BackingField: {fileID: 21300000, guid: c8585141fb74b354c85d360ac6ceac4c, type: 3}

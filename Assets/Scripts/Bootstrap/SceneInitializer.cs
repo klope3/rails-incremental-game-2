@@ -6,6 +6,7 @@ public class SceneInitializer : MonoBehaviour
     [SerializeField] private PlayerSkills playerSkills;
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private SkillTreeUI skillTreeUI;
+    [SerializeField] private AbilityUI abilityUI;
     [SerializeField] private GameDebug gameDebug;
 
     private void Awake()
@@ -17,6 +18,7 @@ public class SceneInitializer : MonoBehaviour
 
         skillTreeUI.Initialize();
         resourceAmountsUI.Initialize();
+        abilityUI.Initialize();
 
         gameDebug.Initialize();
     }

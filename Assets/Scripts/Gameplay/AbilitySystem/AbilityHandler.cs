@@ -7,6 +7,8 @@ public class AbilityHandler : MonoBehaviour
     [SerializeField] private PlayerPulse playerPulse;
     [SerializeField] private PlayerLaser playerLaser;
     [ShowInInspector, ReadOnly] public AbilitySO EquippedAbility { get; private set; }
+    [ShowInInspector, DisplayAsString] public int EquippedAbilityUsesRemaining { get; private set; }
+    public event System.Action OnAbilityUpdate; //using, losing, or acquiring
 
     private void OnEnable()
     {
@@ -32,6 +34,8 @@ public class AbilityHandler : MonoBehaviour
     public void SetAbility(AbilitySO abilitySO)
     {
         EquippedAbility = abilitySO;
+        EquippedAbilityUsesRemaining = abilitySO.BaseMaxUses;
+        OnAbilityUpdate?.Invoke();
     }
 
     public void StartEquippedAbility()
@@ -42,6 +46,12 @@ public class AbilityHandler : MonoBehaviour
         }
         AbilityUseContext context = new AbilityUseContext(playerDash, playerPulse, playerLaser);
         EquippedAbility.ActivateAbility(context);
+        EquippedAbilityUsesRemaining--;
+        if (EquippedAbilityUsesRemaining == 0)
+        {
+            EquippedAbility = null;
+        }
+        OnAbilityUpdate?.Invoke();
     }
 
     //only used for abilities where something happens on mouse up (such as the ability turning off)
