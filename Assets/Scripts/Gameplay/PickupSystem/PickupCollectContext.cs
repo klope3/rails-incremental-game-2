@@ -3,11 +3,13 @@
 public class PickupCollectContext
 {
     public ResourceHandler ResourceHandler { get; private set; }
+    public ResourceRankHandler ResourceRankHandler { get; private set; }
     public AbilityHandler AbilityHandler { get; private set; }
 
-    public PickupCollectContext(ResourceHandler resourceHandler, AbilityHandler abilityHandler)
+    public PickupCollectContext(ResourceHandler resourceHandler, AbilityHandler abilityHandler, ResourceRankHandler rankHandler)
     {
         ResourceHandler = resourceHandler;
         AbilityHandler = abilityHandler;
+        ResourceRankHandler = rankHandler;
     }
 }

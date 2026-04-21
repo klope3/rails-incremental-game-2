@@ -6,6 +6,7 @@ public class GameFlow : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [SerializeField] private PlayerEnergy playerEnergy;
     [SerializeField] private ShipControl shipControl;
+    [SerializeField] private ResourceRankHandler rankHandler;
     [SerializeField] private WorldObjectSpawnerNew spawner;
     public UnityEvent OnPlayModeActive;
     public UnityEvent OnUpgradeModeActive;
@@ -26,6 +27,7 @@ public class GameFlow : MonoBehaviour
         playerObject.SetActive(true);
         shipControl.PrepareForLevel();
         playerEnergy.PrepareForLevel();
+        rankHandler.PrepareForLevel();
         spawner.enabled = true;
 
         OnPlayModeActive?.Invoke();

@@ -18,6 +18,7 @@ public class ResourceHandler : MonoBehaviour
         }
     }
 
+    [SerializeField] private ResourceRankHandler rankHandler;
     [SerializeField] private ResourceSO[] _resourceTypes;
     public IReadOnlyCollection<ResourceSO> ResourceTypes => _resourceTypes;
     [ShowInInspector, ReadOnly] private Dictionary<ResourceSO, int> resourceAmounts;
@@ -35,10 +36,16 @@ public class ResourceHandler : MonoBehaviour
     }
 
     [Button]
-    public void AddResource(ResourceSO resourceSO, int amount)
+    public void AddResource(ResourceSO resourceSO, int amount, bool bypassRank = false)
     {
         int existingAmount = GetResourceAmount(resourceSO);
-        resourceAmounts[resourceSO] = Mathf.Clamp(existingAmount + amount, 0, int.MaxValue);
+        int amountToAdd = amount;
+        if (!bypassRank && amountToAdd > 0)
+        {
+            int rank = rankHandler.GetResourceRank(resourceSO);
+            amountToAdd *= rank;
+        }
+        resourceAmounts[resourceSO] = Mathf.Clamp(existingAmount + amountToAdd, 0, int.MaxValue);
         OnResourcesChanged?.Invoke();
     }
 

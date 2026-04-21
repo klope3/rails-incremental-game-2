@@ -4,6 +4,7 @@ using UnityEngine;
 public class ResourceAmountsUI : MonoBehaviour
 {
     [SerializeField] private ResourceHandler resourceHandler;
+    [SerializeField] private ResourceRankHandler rankHandler;
     [SerializeField] private ResourceAmountElementUI resourceAmountElementPf;
     [SerializeField] private RectTransform resouceAmountElementsParent;
     private List<ResourceAmountElementUI> resourceAmountElements;
@@ -14,7 +15,7 @@ public class ResourceAmountsUI : MonoBehaviour
         foreach (ResourceSO resourceType in resourceHandler.ResourceTypes)
         {
             ResourceAmountElementUI newElement = Instantiate(resourceAmountElementPf, resouceAmountElementsParent);
-            newElement.Initialize(resourceHandler, resourceType);
+            newElement.Initialize(resourceHandler, rankHandler, resourceType);
             resourceAmountElements.Add(newElement);
         }
     }
