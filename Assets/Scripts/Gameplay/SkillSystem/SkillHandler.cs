@@ -47,21 +47,37 @@ public class SkillHandler : MonoBehaviour
     public void TryPurchase(SkillTreeNodeSO skill)
     {
         SkillStatus status = GetSkillStatus(skill);
-        if (status != SkillStatus.Purchasable)
+        if (status != SkillStatus.Purchasable && status != SkillStatus.Purchased)
         {
             Debug.Log($"Purchase not allowed; the skill's status is '{status}'");
             return;
         }
 
-        SkillRequirementContext context = new SkillRequirementContext(resourceHandler);
-        bool requirementsMet = skill.AreRequirementsMet(context);
-        if (!requirementsMet)
+        bool hasSkill = playerSkills.HasSkill(skill, out int ownedTierIndex);
+        int tierIndexToPurchase = hasSkill ? ownedTierIndex + 1 : 0;
+        bool alreadyHighestTier = tierIndexToPurchase >= skill.Tiers.Length;
+        if (alreadyHighestTier)
         {
-            Debug.Log("Purchase not allowed; some requirements not met");
+            Debug.Log("Purchase not allowed; already highest tier");
             return;
         }
 
-        skill.ApplyRequirements(context);
-        playerSkills.AddSkill(skill);
+        SkillRequirementContext context = new SkillRequirementContext(resourceHandler);
+        bool requirementsMet = skill.AreTierRequirementsMet(context, tierIndexToPurchase);
+        if (!requirementsMet)
+        {
+            Debug.Log($"Purchase not allowed; at least one requirement of tier {tierIndexToPurchase} not met");
+            return;
+        }
+
+        skill.ApplyRequirements(context, tierIndexToPurchase);
+
+        if (hasSkill)
+        {
+            playerSkills.UpgradeSkill(skill);
+        } else
+        {
+            playerSkills.AddSkill(skill);
+        }
     }
 }

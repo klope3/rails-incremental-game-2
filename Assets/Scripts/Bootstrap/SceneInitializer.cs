@@ -4,6 +4,7 @@ public class SceneInitializer : MonoBehaviour
 {
     [SerializeField] private ResourceAmountsUI resourceAmountsUI;
     [SerializeField] private PlayerSkills playerSkills;
+    [SerializeField] private PlayerEnergy playerEnergy;
     [SerializeField] private GameFlow gameFlow;
     [SerializeField] private SkillTreeUI skillTreeUI;
     [SerializeField] private AbilityUI abilityUI;
@@ -14,6 +15,7 @@ public class SceneInitializer : MonoBehaviour
         InputActionsProvider.Initialize();
 
         playerSkills.Initialize();
+        playerEnergy.Initialize();
         gameFlow.Initialize();
 
         skillTreeUI.Initialize();

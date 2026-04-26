@@ -1,4 +1,4 @@
-//Context object that gets passed to each owned skill effect, which can then apply logic to the object in its own unique ways.
+//Context object that gets passed to each owned skill node, which can then mutate the object in its own unique ways based on tier and effect type.
 //This class needs to exist for the skill system to work, but the data structure inside it is project-specific.
 public class AppliedSkillEffects
 {

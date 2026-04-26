@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3bcaa6aec14e34999b74b4ea417f82, type: 3}
+  m_Name: UnlockPulse
+  m_EditorClassIdentifier: Gameplay::SkillTreeNodeSO
+  <SkillName>k__BackingField: Unlock Pulse Ability
+  <Sprite>k__BackingField: {fileID: 21300000, guid: b89b9f3598d818e408b97291012e9330, type: 3}
+  <GridPosition>k__BackingField: {x: 0, y: -1}
+  <Children>k__BackingField: []
+  <Tiers>k__BackingField:
+  - {fileID: 11400000, guid: 642d9a98872d036409212d4dc465e8b1, type: 2}
+  effects:
+  - {fileID: 11400000, guid: 02efabb5bdcf0be45afc88515f341f31, type: 2}
+  requirements: []

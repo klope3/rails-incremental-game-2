@@ -12,6 +12,7 @@ public class ShipControl : MonoBehaviour
     public void PrepareForLevel()
     {
         character.maxWalkSpeed = baseMoveSpeed + playerSkills.AppliedSkillEffects.MoveSpeedAdd;
+        Debug.Log($"Speed now {character.maxWalkSpeed}; base {baseMoveSpeed} + {playerSkills.AppliedSkillEffects.MoveSpeedAdd}");
         character.TeleportPosition(Vector3.zero);
     }
 

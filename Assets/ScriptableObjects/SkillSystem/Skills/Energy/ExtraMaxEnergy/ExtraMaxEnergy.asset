@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3bcaa6aec14e34999b74b4ea417f82, type: 3}
+  m_Name: ExtraMaxEnergy
+  m_EditorClassIdentifier: Gameplay::SkillTreeNodeSO
+  <SkillName>k__BackingField: Increase Max Energy
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 2b3b1342ad0149040910b0fe865e7497, type: 3}
+  <GridPosition>k__BackingField: {x: 0, y: 0}
+  <Children>k__BackingField:
+  - {fileID: 11400000, guid: 1753917c797f63d458106debfd959ded, type: 2}
+  - {fileID: 11400000, guid: d5411c78827adbe438543ca7ffb512af, type: 2}
+  - {fileID: 11400000, guid: 46ca7e0f6dadf9447ad7a01b26539208, type: 2}
+  - {fileID: 11400000, guid: ab84a5bf5fda0eb4e85df04005d5409b, type: 2}
+  <Tiers>k__BackingField:
+  - {fileID: 11400000, guid: 9301bad037cc6374b9ecac1e2cc3112a, type: 2}
+  - {fileID: 11400000, guid: c52c142ceb14f9a40b222faf249ae11e, type: 2}

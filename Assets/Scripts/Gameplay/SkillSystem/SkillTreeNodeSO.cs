@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-//Represents an individual node of a skill tree. Keep a list somewhere in game state to represent which nodes a character "owns."
-//Each node must have one or more "effects" to do anything.
+//Represents an individual node of a skill tree. Each node can have multiple tiers, but needs to have at least one to do anything.
+//Keep a list somewhere in game state to represent which nodes a character "owns," and the tier at which they own it.
 [CreateAssetMenu(fileName = "SkillTreeNodeSO", menuName = "Scriptable Objects/SkillSystem/SkillTreeNodeSO")]
 public class SkillTreeNodeSO : ScriptableObject
 {
@@ -11,32 +9,37 @@ public class SkillTreeNodeSO : ScriptableObject
     [field: SerializeField] public Sprite Sprite { get; private set; }
     [field: SerializeField] public Vector2Int GridPosition { get; private set; }
     [field: SerializeField] public SkillTreeNodeSO[] Children { get; private set; }
-    [SerializeField] private SkillEffectSO[] effects;
-    [SerializeField] private SkillRequirementSO[] requirements;
+    [field: SerializeField] public SkillTierSO[] Tiers { get; private set; }
 
-    public void ApplySkill(AppliedSkillEffects effects)
+    public void ApplySkill(AppliedSkillEffects effects, int tierIndex)
     {
-        foreach (SkillEffectSO effect in this.effects)
-        {
-            effect.ApplyEffect(effects);
-        }
+        SkillTierSO tier = GetTier(tierIndex);
+        tier.ApplyTierEffect(effects);
     }
 
-    public bool AreRequirementsMet(SkillRequirementContext context)
+    public bool AreTierRequirementsMet(SkillRequirementContext context, int tierIndex)
     {
-        foreach (SkillRequirementSO req in requirements)
-        {
-            if (!req.IsRequirementMet(context)) return false;
-        }
-
-        return true;
+        SkillTierSO tier = GetTier(tierIndex);
+        return tier.AreRequirementsMet(context);
     }
 
-    public void ApplyRequirements(SkillRequirementContext context)
+    private SkillTierSO GetTier(int index)
     {
-        foreach (SkillRequirementSO req in requirements)
+        if (index < 0 || index >= Tiers.Length)
         {
-            req.ApplyRequirement(context);
+            Debug.LogError($"Requested tier {index} is outside the range of the {Tiers.Length} tiers in {SkillName}");
+            return null;
+        }
+
+        return Tiers[index];
+    }
+
+    public void ApplyRequirements(SkillRequirementContext context, int tierIndex)
+    {
+        SkillTierSO tier = GetTier(tierIndex);
+        foreach (SkillTierRequirement req in tier.Requirements)
+        {
+            SkillRequirements.ApplyRequirement(req, context);
         }
     }
 }

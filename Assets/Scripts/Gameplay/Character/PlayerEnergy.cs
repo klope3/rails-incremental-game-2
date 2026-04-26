@@ -17,6 +17,11 @@ public class PlayerEnergy : MonoBehaviour
     }
     public event System.Action OnDepleted;
 
+    public void Initialize()
+    {
+        EnergyCanDrain = true;
+    }
+
     private void Update()
     {
         Add(-1 * (baseDepletionRate + playerSkills.AppliedSkillEffects.EnergyDepletionRateAdd) * Time.deltaTime);

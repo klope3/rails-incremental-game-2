@@ -49,6 +49,14 @@ public class ResourceHandler : MonoBehaviour
         OnResourcesChanged?.Invoke();
     }
 
+    //convenience overload to modify a resource amount without needing a reference to the SO
+    public void AddResource(SkillRequirements.SkillRequirementType requirementType, int amount, bool bypassRank = false)
+    {
+        if (requirementType == SkillRequirements.SkillRequirementType.Resource1) AddResource(_resourceTypes[0], amount, bypassRank);
+        if (requirementType == SkillRequirements.SkillRequirementType.Resource2) AddResource(_resourceTypes[1], amount, bypassRank);
+        if (requirementType == SkillRequirements.SkillRequirementType.Resource3) AddResource(_resourceTypes[2], amount, bypassRank);
+    }
+
     public int GetResourceAmount(ResourceSO resourceSO)
     {
         if (resourceAmounts == null) InitializeDictionary();
@@ -60,5 +68,16 @@ public class ResourceHandler : MonoBehaviour
         }
 
         return existingAmount;
+    }
+
+    //convenience overload to get a required resource amount without needing a reference to the SO
+    public int GetResourceAmount(SkillRequirements.SkillRequirementType requirementType)
+    {
+        if (requirementType == SkillRequirements.SkillRequirementType.Resource1) return GetResourceAmount(_resourceTypes[0]);
+        if (requirementType == SkillRequirements.SkillRequirementType.Resource2) return GetResourceAmount(_resourceTypes[1]);
+        if (requirementType == SkillRequirements.SkillRequirementType.Resource3) return GetResourceAmount(_resourceTypes[2]);
+
+        Debug.LogError($"Requirement type {requirementType} does not correspond to a resource type");
+        return -1;
     }
 }
