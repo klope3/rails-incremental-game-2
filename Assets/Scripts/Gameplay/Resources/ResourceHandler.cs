@@ -5,18 +5,18 @@ using Sirenix.OdinInspector;
 
 public class ResourceHandler : MonoBehaviour
 {
-    private static ResourceHandler _instance;
-    public static ResourceHandler Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindAnyObjectByType<ResourceHandler>();
-            }
-            return _instance;
-        }
-    }
+    //private static ResourceHandler _instance;
+    //public static ResourceHandler Instance
+    //{
+    //    get
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            _instance = FindAnyObjectByType<ResourceHandler>();
+    //        }
+    //        return _instance;
+    //    }
+    //}
 
     [SerializeField] private ResourceRankHandler rankHandler;
     [SerializeField] private ResourceSO[] _resourceTypes;
@@ -24,13 +24,22 @@ public class ResourceHandler : MonoBehaviour
     [ShowInInspector, ReadOnly] private Dictionary<ResourceSO, int> resourceAmounts;
     public UnityEvent OnResourcesChanged;
 
-    private void InitializeDictionary()
+    public void Initialize()
     {
         resourceAmounts = new Dictionary<ResourceSO, int>();
         foreach (ResourceSO resource in _resourceTypes)
         {
             resourceAmounts.Add(resource, 0);
         }
+
+        OnResourcesChanged?.Invoke();
+    }
+
+    public void ApplySaveData(PlayerData playerData)
+    {
+        resourceAmounts[_resourceTypes[0]] = playerData.resource1Amount;
+        resourceAmounts[_resourceTypes[1]] = playerData.resource2Amount;
+        resourceAmounts[_resourceTypes[2]] = playerData.resource3Amount;
 
         OnResourcesChanged?.Invoke();
     }
@@ -59,7 +68,7 @@ public class ResourceHandler : MonoBehaviour
 
     public int GetResourceAmount(ResourceSO resourceSO)
     {
-        if (resourceAmounts == null) InitializeDictionary();
+        //if (resourceAmounts == null) InitializeDictionary();
 
         bool existing = resourceAmounts.TryGetValue(resourceSO, out int existingAmount);
         if (!existing)
@@ -68,6 +77,19 @@ public class ResourceHandler : MonoBehaviour
         }
 
         return existingAmount;
+    }
+
+    //convenience overload to get a required resource amount without needing a reference to the SO
+    //this should replace the other overload
+    public int GetResourceAmount(int index)
+    {
+        if (index < 0 || index >= _resourceTypes.Length)
+        {
+            Debug.LogError($"Index {index} is out of bounds");
+            return -1;
+        }
+
+        return GetResourceAmount(_resourceTypes[index]);
     }
 
     //convenience overload to get a required resource amount without needing a reference to the SO

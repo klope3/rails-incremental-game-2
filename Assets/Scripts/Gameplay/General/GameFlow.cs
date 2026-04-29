@@ -13,7 +13,7 @@ public class GameFlow : MonoBehaviour
 
     public void Initialize()
     {
-        SetPlayMode();
+        SetUpgradeMode();
         playerEnergy.OnDepleted += PlayerEnergy_OnDepleted;
     }
 

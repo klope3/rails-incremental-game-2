@@ -3,8 +3,9 @@ using UnityEngine;
 //Represents an individual node of a skill tree. Each node can have multiple tiers, but needs to have at least one to do anything.
 //Keep a list somewhere in game state to represent which nodes a character "owns," and the tier at which they own it.
 [CreateAssetMenu(fileName = "SkillTreeNodeSO", menuName = "Scriptable Objects/SkillSystem/SkillTreeNodeSO")]
-public class SkillTreeNodeSO : ScriptableObject
+public class SkillTreeNodeSO : ScriptableObject, IHasId
 {
+    [field: SerializeField] public string Id { get; private set; }
     [field: SerializeField] public string SkillName { get; private set; }
     [field: SerializeField] public Sprite Sprite { get; private set; }
     [field: SerializeField] public Vector2Int GridPosition { get; private set; }

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b3bcaa6aec14e34999b74b4ea417f82, type: 3}
-  m_Name: UnlockPulse
+  m_Name: FasterEnergyRegen
   m_EditorClassIdentifier: Gameplay::SkillTreeNodeSO
-  <SkillName>k__BackingField: Unlock Pulse Ability
-  <Sprite>k__BackingField: {fileID: 21300000, guid: b89b9f3598d818e408b97291012e9330, type: 3}
-  <GridPosition>k__BackingField: {x: 0, y: -1}
+  <Id>k__BackingField: faster_energy_regen
+  <SkillName>k__BackingField: Faster Energy Regen
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 2b3b1342ad0149040910b0fe865e7497, type: 3}
+  <GridPosition>k__BackingField: {x: 1, y: 0}
   <Children>k__BackingField: []
   <Tiers>k__BackingField:
-  - {fileID: 11400000, guid: 642d9a98872d036409212d4dc465e8b1, type: 2}
-  effects:
-  - {fileID: 11400000, guid: 02efabb5bdcf0be45afc88515f341f31, type: 2}
-  requirements: []
+  - {fileID: 11400000, guid: f090a893339378844879d9a38a453f0d, type: 2}
+  - {fileID: 11400000, guid: 31ba9bd2b53832748a02dfff1d8dea02, type: 2}

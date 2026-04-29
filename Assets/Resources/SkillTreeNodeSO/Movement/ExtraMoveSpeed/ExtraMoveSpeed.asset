@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3bcaa6aec14e34999b74b4ea417f82, type: 3}
   m_Name: ExtraMoveSpeed
   m_EditorClassIdentifier: Gameplay::SkillTreeNodeSO
+  <Id>k__BackingField: extra_move_speed
   <SkillName>k__BackingField: Increase Move Speed
   <Sprite>k__BackingField: {fileID: 21300000, guid: 95a5d2126ee033b41a9af1a1eb0d33b2, type: 3}
   <GridPosition>k__BackingField: {x: 0, y: 1}
@@ -19,6 +20,3 @@ MonoBehaviour:
   <Tiers>k__BackingField:
   - {fileID: 11400000, guid: 6b17927a1646942449cc486b1dadf4ab, type: 2}
   - {fileID: 11400000, guid: 658d0e0bcef4fdd45833b88fdcedcd77, type: 2}
-  effects:
-  - {fileID: 11400000, guid: 616f44101d29c284684704dfee054e43, type: 2}
-  requirements: []

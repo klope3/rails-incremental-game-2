@@ -73,4 +73,10 @@ public class GameDebug : MonoBehaviour
         resourceHandler.AddResource(resource2, resource2Amount, true);
         resourceHandler.AddResource(resource3, resource3Amount, true);
     }
+
+    [Button]
+    private void ReinitializeGameDatabase()
+    {
+        GameDatabase.Reinitialize();
+    }
 }

@@ -22,6 +22,11 @@ public class ResourceAmountsUI : MonoBehaviour
     
     public void UpdateDisplay()
     {
+        if (resourceAmountElements == null)
+        {
+            return;
+        }
+
         foreach (ResourceAmountElementUI resourceAmountElement in resourceAmountElements)
         {
             resourceAmountElement.UpdateDisplay();

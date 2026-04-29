@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b3bcaa6aec14e34999b74b4ea417f82, type: 3}
-  m_Name: AlphaResourceWorth
+  m_Name: UnlockPulse
   m_EditorClassIdentifier: Gameplay::SkillTreeNodeSO
-  <SkillName>k__BackingField: Increase Tri Value
-  <Sprite>k__BackingField: {fileID: 21300000, guid: c8585141fb74b354c85d360ac6ceac4c, type: 3}
-  <GridPosition>k__BackingField: {x: -1, y: 0}
+  <Id>k__BackingField: pulse_unlock
+  <SkillName>k__BackingField: Unlock Pulse Ability
+  <Sprite>k__BackingField: {fileID: 21300000, guid: b89b9f3598d818e408b97291012e9330, type: 3}
+  <GridPosition>k__BackingField: {x: 0, y: -1}
   <Children>k__BackingField: []
   <Tiers>k__BackingField:
-  - {fileID: 11400000, guid: 10379e791bec511429d6cffe2b31ec40, type: 2}
-  effects: []
-  requirements: []
+  - {fileID: 11400000, guid: 642d9a98872d036409212d4dc465e8b1, type: 2}

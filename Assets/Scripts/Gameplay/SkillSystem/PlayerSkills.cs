@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 public class PlayerSkills : MonoBehaviour
 {
     [ShowInInspector, ReadOnly] private Dictionary<SkillTreeNodeSO, int> ownedSkills; //each entry is a skill the player owns, alongside the tier at which they own it; tiers are zero-indexed
+    public IReadOnlyDictionary<SkillTreeNodeSO, int> OwnedSkills { get { return ownedSkills; } }
     public AppliedSkillEffects AppliedSkillEffects { get; private set; }
     public event System.Action OnSkillsChange;
 
@@ -16,15 +17,24 @@ public class PlayerSkills : MonoBehaviour
         AppliedSkillEffects = new AppliedSkillEffects();
     }
 
+    public void ApplySaveData(PlayerData playerData)
+    {
+        foreach (OwnedSkill skill in playerData.ownedSkills)
+        {
+            SkillTreeNodeSO skillNode = GameDatabase.GetSkillNode(skill.id);
+            AddSkill(skillNode, skill.tierIndex);
+        }
+    }
+
     [Button]
-    public void AddSkill(SkillTreeNodeSO skillTreeNodeSO)
+    public void AddSkill(SkillTreeNodeSO skillTreeNodeSO, int tierIndex = 0)
     {
         if (HasSkill(skillTreeNodeSO))
         {
             Debug.LogError($"Player already owns skill {skillTreeNodeSO.SkillName}");
             return;
         }
-        ownedSkills.Add(skillTreeNodeSO, 0);
+        ownedSkills.Add(skillTreeNodeSO, tierIndex);
         UpdateSkillEffectsObject();
         OnSkillsChange?.Invoke();
 
