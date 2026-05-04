@@ -3,8 +3,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class RectHazard : MonoBehaviour
 {
-    [SerializeField] private Vector2 vel;
+    [SerializeField] private float speed;
     private Rigidbody rb;
+    [HideInInspector] public Vector3 moveDirection;
+    [SerializeField] private float minLifetime;
+    [SerializeField] private float maxTimeOutOfBounds;
+
 
     private void Awake()
     {
@@ -13,7 +17,7 @@ public class RectHazard : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 moveVec = Vector3.right * vel.x + Vector3.forward * vel.y;
+        Vector3 moveVec = moveDirection * speed;
         rb.MovePosition(transform.position + moveVec * Time.fixedDeltaTime);
     }
 

@@ -12,4 +12,12 @@ public class GameObjectPoolHelper : MonoBehaviour
         GameObjectPool randPool = pools[randIndex];
         return randPool.GetPooledObject();
     }
+
+    public void DeactivateAll()
+    {
+        foreach (GameObjectPool pool in pools)
+        {
+            pool.DeactivateAll();
+        }
+    }
 }

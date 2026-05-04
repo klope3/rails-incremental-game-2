@@ -326,7 +326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &45581113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   resource2: {fileID: 11400000, guid: 6b6b2004f7ae0b442ae79e9a38c96a16, type: 2}
   resource3: {fileID: 11400000, guid: 5c23cf40a4ab26144a48a09875bf6cd6, type: 2}
   preventEnergyDrain: 1
-  disableShipControl: 0
+  disableShipControl: 1
   player: {fileID: 1241094090}
   abilityHandler: {fileID: 1241094100}
   playerEnergy: {fileID: 1241094096}
@@ -5160,6 +5160,52 @@ MonoBehaviour:
   coefficient: 0.002
   add: 0.45
   innerRadiusPropertyName: _InnerRadius
+--- !u!1 &1360781098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360781099}
+  - component: {fileID: 1360781100}
+  m_Layer: 0
+  m_Name: GameWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1360781099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360781098}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1956730829}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1360781100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360781098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3282a401e3afe344ea3c48785e9c5851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Gameplay::GameWorld
+  bounds: {x: 44, y: 24.8}
+  yOffset: 1
 --- !u!1 &1363787086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,18 +5823,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec627dfdcb600242b8d6c06dbbd125b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Gameplay::WorldObjectSpawnerNew2
-  bounds: {x: 49, y: 27.1}
-  yOffset: 1
   resource1Pool: {fileID: 1298502436}
-  rectHazardPool: {fileID: 0}
-  spawnAttemptInterval: 1
+  glitchPool: {fileID: 108631265}
+  spawnAttemptInterval: 0.3
   playerTransform: {fileID: 1241094095}
   minPlayerDistance: 5
   spawnChances:
     m_PLID: f7420493-07bf-4a27-a9ae-bf9f6a86e215
     m_ProbabilityItems:
     - m_Value: 0
-      m_BaseProbability: 0.36693043
+      m_BaseProbability: 0.22275251
       m_Enabled: 1
       m_Locked: 0
       m_InfluenceSpread: {x: 0, y: 1}
@@ -5797,9 +5841,9 @@ MonoBehaviour:
       m_DepletableItem: 1
       m_Units: 1
       m_MaxUnits: 1
-      m_Weight: 73
+      m_Weight: 66
     - m_Value: 1
-      m_BaseProbability: 0.63306963
+      m_BaseProbability: 0.47489348
       m_Enabled: 1
       m_Locked: 0
       m_InfluenceSpread: {x: 0, y: 1}
@@ -5808,7 +5852,18 @@ MonoBehaviour:
       m_DepletableItem: 1
       m_Units: 1
       m_MaxUnits: 1
-      m_Weight: 127
+      m_Weight: 141
+    - m_Value: 3
+      m_BaseProbability: 0.302354
+      m_Enabled: 1
+      m_Locked: 0
+      m_InfluenceSpread: {x: 0, y: 1}
+      m_InfluenceProvider: {fileID: 0}
+      m_InvertInfluence: 0
+      m_DepletableItem: 1
+      m_Units: 1
+      m_MaxUnits: 1
+      m_Weight: 89
     m_PreventRepeat: 0
     m_ShuffleIterations: 1
     m_PickCountMin: 1
@@ -6565,6 +6620,7 @@ Transform:
   - {fileID: 199050346}
   - {fileID: 968802079}
   - {fileID: 1624173845}
+  - {fileID: 1360781099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971961729
